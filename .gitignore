@@ -1,0 +1,21 @@
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+.env
+.env.*
+!.env.example
+.DS_Store
+
+# Данные и модели хранятся через DVC, в Git остаются метаданные.
+/data/**/*
+!/data/**/
+!/data/**/.gitkeep
+!/data/**/*.dvc
+!/data/**/.gitignore
+/models/*
+!/models/.gitkeep
+!/models/*.dvc
+!/models/.gitignore
