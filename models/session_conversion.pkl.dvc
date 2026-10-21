@@ -1,0 +1,5 @@
+outs:
+- md5: 811d036cb4a8b192df3dd54f613bc8da
+  size: 8400
+  hash: md5
+  path: session_conversion.pkl
