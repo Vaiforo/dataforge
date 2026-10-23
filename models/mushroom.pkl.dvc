@@ -1,0 +1,5 @@
+outs:
+- md5: f9d999e3ff4ca3589b4d7315d76e618f
+  size: 5510
+  hash: md5
+  path: mushroom.pkl
