@@ -59,3 +59,18 @@ Accuracy: **0,9988**, ROC-AUC: **1,0000** (округлено); 2 ошибки �
 ```bash
 dvc add data/raw/mushroom.arff models/mushroom.pkl
 ```
+
+## Подготовка признаков сессий
+
+[Ноутбук](notebooks/session_feature_selection.ipynb) сравнивает медиану, KNN и Iterative,
+удаление аномалий через IsolationForest и отбор через VarianceThreshold и SHAP.
+Таблицы, графики и выводы находятся в ноутбуке.
+
+Создать отдельный CSV с пропусками: `python -m src.data.create_incomplete_sessions`.
+Если файл уже есть, повторная генерация не нужна.
+Итог: Iterative + SHAP, 47 признаков; ROC-AUC на тесте **0,9038**, F1 **0,5406**.
+По кросс-валидации полный конвейер не превзошёл вариант с одной импутацией.
+
+Модель – `models/session_feature_selection.pkl`. Перед загрузкой через `pickle`
+выполните ячейки импорта и определения классов в ноутбуке.
+Данные и модель отслеживаются DVC.

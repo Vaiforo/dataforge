@@ -1,0 +1,5 @@
+outs:
+- md5: 8367632e9ae59d2d01eb6b611c02c8ad
+  size: 1048971
+  hash: md5
+  path: session_feature_selection.pkl
