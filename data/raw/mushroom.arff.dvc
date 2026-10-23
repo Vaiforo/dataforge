@@ -1,0 +1,5 @@
+outs:
+- md5: c8e898e453167e76d617eff67d198579
+  size: 751225
+  hash: md5
+  path: mushroom.arff
