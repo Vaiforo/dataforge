@@ -74,3 +74,16 @@ dvc add data/raw/mushroom.arff models/mushroom.pkl
 Модель – `models/session_feature_selection.pkl`. Перед загрузкой через `pickle`
 выполните ячейки импорта и определения классов в ноутбуке.
 Данные и модель отслеживаются DVC.
+
+## Пропуски в данных о жилье
+
+[Ноутбук](notebooks/housing_imputation.ipynb) сравнивает медиану, KNN и Iterative
+с RandomForestRegressor на House Prices. IsolationForest и PCA показывают необычные дома.
+
+Данные: `data/raw/housing_prices.csv`, источник указан в ноутбуке.
+Создать копию с 20% пропусков в трёх числовых колонках:
+`python -m src.data.create_incomplete_housing`. Если копия уже есть, шаг пропустите.
+
+Модель – `models/housing_regression.pkl`, загрузка через `pickle.load`.
+Выбран KNN: RMSE на тесте **29 218**, MAE **17 994** долларов.
+Исходные данные, копия с пропусками и модель отслеживаются DVC.
