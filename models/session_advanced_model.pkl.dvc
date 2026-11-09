@@ -1,0 +1,5 @@
+outs:
+- md5: 6847b46bbad3e8106aa23fa7201718f6
+  size: 404485
+  hash: md5
+  path: session_advanced_model.pkl

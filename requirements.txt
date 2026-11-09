@@ -2,6 +2,7 @@ aiohappyeyeballs==2.7.1
 aiohttp==3.14.5
 aiohttp-retry==2.9.1
 aiosignal==1.4.0
+alembic==1.20.1
 amqp==5.4.1
 annotated-types==0.8.0
 antlr4-python3-runtime==4.9.3
@@ -19,6 +20,7 @@ babel==2.18.0
 beautifulsoup4==4.15.0
 billiard==4.3.1
 bleach==6.4.0
+catboost==1.2.10
 celery==5.6.3
 certifi==2026.10.19
 cffi==2.1.1
@@ -29,6 +31,7 @@ click-plugins==1.1.1.2
 click-repl==0.4.1
 cloudpickle==3.1.2
 colorama==0.4.6
+colorlog==6.12.0
 comm==0.2.3
 configobj==5.0.9
 contourpy==1.4.0
@@ -62,6 +65,7 @@ funcy==2.1
 gitdb==4.0.12
 GitPython==3.2.1
 grandalf==0.8
+graphviz==0.21
 gto==1.10.1
 h11==0.16.0
 httpcore==1.0.9
@@ -94,7 +98,9 @@ jupyterlab_server==2.28.1
 kiwisolver==1.5.1
 kombu==5.6.2
 lark==1.3.1
+lightgbm==4.7.0
 llvmlite==0.50.0
+Mako==1.4.3
 markdown-it-py==4.2.0
 MarkupSafe==3.0.4
 matplotlib==3.10.7
@@ -102,6 +108,7 @@ matplotlib-inline==0.2.2
 mdurl==0.1.2
 mistune==3.4.0
 multidict==7.1.0
+narwhals==2.28.0
 nbclient==0.11.0
 nbconvert==7.17.2
 nbformat==5.11.1
@@ -110,7 +117,9 @@ networkx==3.7
 notebook_shim==0.2.4
 numba==0.68.0
 numpy==2.5.4
+nvidia-nccl-cu13==2.32.3
 omegaconf==2.3.1
+optuna==5.0.0
 orjson==3.13.0
 packaging==26.3
 pandas==2.3.3
@@ -120,6 +129,7 @@ pathspec==1.1.1
 pexpect==4.9.0
 pillow==13.0.0
 platformdirs==4.13.5
+plotly==7.1.0
 prometheus_client==0.26.0
 prompt_toolkit==3.0.53
 propcache==0.5.4
@@ -162,6 +172,7 @@ six==1.17.0
 slicer==0.0.8
 smmap==5.0.3
 soupsieve==3.0.3
+SQLAlchemy==2.1.8
 sqltrie==0.11.3
 stack-data==0.6.3
 tabulate==0.10.0
@@ -176,6 +187,7 @@ typing-inspection==0.4.4
 typing_extensions==4.16.0
 tzdata==2026.5
 tzlocal==5.4.4
+ucimlrepo==0.0.7
 uri-template==1.3.0
 urllib3==2.8.0
 vine==5.1.0
@@ -184,5 +196,6 @@ wcwidth==0.9.3
 webcolors==25.10.0
 webencodings==0.6.1
 websocket-client==1.9.2
+xgboost==3.4.1
 yarl==1.25.1
 zc.lockfile==4.0
