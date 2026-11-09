@@ -5,6 +5,8 @@
 проверяет веса классов, RandomUnderSampler и стекинг LightGBM + RandomForest + SVC.
 SHAP-графики и таблицы метрик находятся в ноутбуке после выполнения ячеек.
 Используется исходный `data/raw/online_shoppers_intention.csv`.
+Если CSV отсутствует, ноутбук загружает датасет UCI №468 через `ucimlrepo`
+и сохраняет его по этому пути. Для первой загрузки нужен интернет.
 Полный выбранный конвейер сохраняется в `models/session_advanced_model.pkl`
 и загружается стандартным `pickle.load`; файл отслеживается DVC.
 Для запуска выполните `pip install -r requirements.txt` и откройте ноутбук в Jupyter.
