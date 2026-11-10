@@ -1,0 +1,25 @@
+# Нейросетевые исследования DataForge: окружение Python 3.14 (venv, создан через uv).
+# Установка: uv pip install --python venv/bin/python --torch-backend cpu -r requirements-neural.txt
+# Gensim на PyPI не имеет колеса под cp314 (sdist не собирается), поэтому ставится
+# напрямую из официального Git-репозитория (тег 4.4.0, commit ee2642b4).
+# torch — CPU-сборка; при рабочем драйвере можно заменить на CUDA-сборку.
+
+gensim @ git+https://github.com/piskvorky/gensim.git@ee2642b4fa26e689ba4595067504668bc7a89016
+torch==2.15.0+cpu
+transformers==5.22.2
+sentence-transformers==6.2.0
+datasets==5.2.0
+umap-learn==0.5.12
+scikit-learn==1.7.2
+pandas==2.3.3
+numpy==2.5.4
+scipy==1.18.1
+matplotlib==3.10.7
+lightgbm==4.7.0
+pyarrow==26.0.1
+jupyterlab==4.6.4
+ipykernel==7.4.0
+nbclient==0.11.0
+nbformat==5.11.1
+nbconvert==7.17.2
+dvc==3.67.1

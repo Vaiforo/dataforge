@@ -1,0 +1,5 @@
+outs:
+- md5: d89dc9b2e0c84cc3a70ce17babd169c2
+  size: 458443
+  hash: md5
+  path: amazon_tfidf_model.pkl

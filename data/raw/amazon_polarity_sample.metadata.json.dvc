@@ -1,0 +1,5 @@
+outs:
+- md5: 26ce2b1e911da804a18e7acd7aa6f392
+  size: 2375
+  hash: md5
+  path: amazon_polarity_sample.metadata.json

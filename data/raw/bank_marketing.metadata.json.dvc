@@ -1,0 +1,5 @@
+outs:
+- md5: 062e90764db9369c4fc1574fa935c594
+  size: 9679
+  hash: md5
+  path: bank_marketing.metadata.json

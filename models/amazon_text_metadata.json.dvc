@@ -1,0 +1,5 @@
+outs:
+- md5: 414ee7a06b60b298e1e6a21bc10c918e
+  size: 2934
+  hash: md5
+  path: amazon_text_metadata.json

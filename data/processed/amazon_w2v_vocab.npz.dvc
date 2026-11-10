@@ -1,0 +1,5 @@
+outs:
+- md5: 698ab53db7d8a4c709fdcfe35477fb91
+  size: 51545500
+  hash: md5
+  path: amazon_w2v_vocab.npz

@@ -1,0 +1,5 @@
+outs:
+- md5: d5c16bc97278f1dc7521247fc0e3fffe
+  size: 10957619
+  hash: md5
+  path: amazon_w2v_docvectors.npz

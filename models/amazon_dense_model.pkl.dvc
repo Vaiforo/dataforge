@@ -1,0 +1,5 @@
+outs:
+- md5: dea6047c78c6ae516e921f07d9a76eb3
+  size: 13471
+  hash: md5
+  path: amazon_dense_model.pkl

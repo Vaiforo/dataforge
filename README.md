@@ -1,4 +1,73 @@
-# Cart Scope
+# DataForge: аналитика сессий и нейросетевые исследования
+
+Проект объединяет два направления независимых исследований DataForge:
+аналитику покупательских сессий интернет-магазина (Cart Scope, исходные пять ноутбуков)
+и новые нейросетевые эксперименты — представления текстов и табличное глубокое обучение.
+
+## Представления текстов отзывов Amazon
+
+[Ноутбук](notebooks/amazon_text_representations.ipynb) сравнивает TF-IDF (1–2-граммы,
+10 000 признаков), усредненные статические эмбеддинги Word2Vec Google News 300
+(`gensim.downloader`) и контекстные эмбеддинги Sentence-Transformers
+`all-MiniLM-L6-v2` (зафиксированная ревизия) на воспроизводимом подмножестве
+Amazon Reviews Polarity: 8 000 train + 2 000 test, сбалансированно, seed 42,
+источник `fancyzhx/amazon_polarity` с записанной ревизией. Классификатор один и тот же —
+логистическая регрессия; выбор лучшего плотного метода — по ROC-AUC валидации,
+итоговое сравнение всех трех — на нетронутом официальном тестовом подмножестве.
+Фактические метрики (ROC-AUC на тесте): TF-IDF **0,9422**, MiniLM **0,9251**,
+Word2Vec **0,9149**; лучшие плотные представления — MiniLM, их проекции
+PCA/t-SNE/UMAP построены в ноутбуке. Эмбеддинги, разбиения и модели кэшируются
+в `data/processed` и `models` и отслеживаются DVC.
+
+## Нейросетевая классификация в банковском телемаркетинге
+
+[Ноутбук](notebooks/bank_neural_classification.ipynb) сравнивает LightGBM (параметры по
+умолчанию) и собственный MLP (`nn.Embedding` для категорий + числовые признаки, блоки
+Linear→BatchNorm→ReLU→Dropout) на данных Bank Marketing (OpenML 1461, 45 211 строк,
+стратифицированная выборка 20 000, seed 42, разбиение 60/20/20). Обучаются ровно
+12 конфигураций (ширины × dropout × learning rate) с ранней остановкой по валидации;
+`pos_weight` считается только по train. Фактические метрики на тесте: MLP ROC-AUC
+**0,9087** / AP **0,5241**; LightGBM ROC-AUC **0,9145** / AP **0,5611** (порог 0,5,
+матрицы ошибок в ноутбуке). Признак `duration` известен только после звонка — модель
+описывает итог контакта, а не прогноз до обзвона; `pdays=-1` — значимый сентинел.
+Скрытое представление MLP визуализируется проекциями PCA/t-SNE/UMAP.
+
+## Запуск нейросетевых ноутбуков
+
+Окружение — Python 3.14 (проверено на 3.14.7), виртуальное окружение `venv/` создается
+через `uv`, зависимости — в `requirements-neural.txt` (gensim ставится из Git,
+см. комментарий в файле). Полная настройка с нуля:
+
+```bash
+uv venv --python 3.14.7 venv
+uv pip install --python venv/bin/python --torch-backend cpu -r requirements-neural.txt
+venv/bin/python -m ipykernel install --user --name neural314 \
+  --display-name "DataForge Python 3.14.7"
+venv/bin/jupyter lab
+```
+
+Готовые подвыборки хранятся в DVC: `data/raw/amazon_polarity_sample.parquet`
+и `data/processed/bank_marketing_sample.parquet`. Ноутбуки читают эти файлы напрямую.
+Перед запуском получите подвыборки и метаданные Amazon из имеющегося локального кэша:
+
+```bash
+venv/bin/dvc checkout data/raw/amazon_polarity_sample.parquet.dvc \
+  data/raw/amazon_polarity_sample.metadata.json.dvc \
+  data/processed/bank_marketing_sample.parquet.dvc
+```
+
+Данные и модели отслеживаются DVC; публичного remote нет — кэш DVC локальный
+(`.dvc/cache` проекта). Для другого компьютера нужно перенести кэш либо настроить
+доступное DVC-хранилище и выполнить `dvc pull` для тех же файлов. Для обзора полных
+данных банка также используется `data/raw/bank_marketing.arff` (есть в DVC;
+при отсутствии ноутбук скачивает его из OpenML).
+
+В Jupyter выберите ядро `DataForge Python 3.14.7` (kernelspec `neural314`) и выполните
+ноутбук сверху вниз. Первый запуск скачивает веса Word2Vec Google News (~1,74 ГБ, кэш
+`~/gensim-data`) и MiniLM (~90 МБ, кэш `~/.cache/huggingface`). При готовых кэшах и данных
+ноутбук выполняется автономно. Расчет идет на CPU; для GPU нужна CUDA-сборка torch
+вместо фиксированной в файле требований `+cpu` — наличие драйвера само по себе GPU
+не включает.
 
 Новый анализ: [бустинги и ансамбли](notebooks/session_advanced_models.ipynb).
 Ноутбук сравнивает XGBoost, LightGBM и CatBoost, выполняет 50 trials Optuna,

@@ -1,0 +1,5 @@
+outs:
+- md5: 5daa90e721f1368b3a515f3450008488
+  size: 14241903
+  hash: md5
+  path: amazon_minilm_embeddings.npz

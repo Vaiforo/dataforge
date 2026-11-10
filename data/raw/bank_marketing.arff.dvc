@@ -1,0 +1,5 @@
+outs:
+- md5: b29d2eb78e508569fd41172c97bda00e
+  size: 3660226
+  hash: md5
+  path: bank_marketing.arff
