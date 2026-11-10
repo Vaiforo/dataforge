@@ -1,0 +1,5 @@
+outs:
+- md5: c66158421c757dc304aeb1a06b35c8d0
+  size: 4111
+  hash: md5
+  path: bank_models_metadata.json

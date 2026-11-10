@@ -1,0 +1,5 @@
+outs:
+- md5: 15577cf21b39400964726f2ca271a81f
+  size: 351008
+  hash: md5
+  path: bank_lightgbm.pkl

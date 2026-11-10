@@ -1,0 +1,6 @@
+outs:
+- md5: 3fe500f70e4cd04e2585a6a8177a9188.dir
+  size: 1145438811
+  nfiles: 7
+  hash: md5
+  path: amazon_polarity

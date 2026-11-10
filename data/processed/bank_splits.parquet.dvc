@@ -1,0 +1,5 @@
+outs:
+- md5: 8d3153b4736ec2de7040f34e81ea40de
+  size: 122573
+  hash: md5
+  path: bank_splits.parquet

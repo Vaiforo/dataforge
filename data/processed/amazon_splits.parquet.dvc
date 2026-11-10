@@ -1,0 +1,5 @@
+outs:
+- md5: eb17793e8a7996e8cb02739bde70dcbc
+  size: 746448
+  hash: md5
+  path: amazon_splits.parquet

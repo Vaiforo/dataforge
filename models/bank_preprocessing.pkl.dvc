@@ -1,0 +1,5 @@
+outs:
+- md5: fd9c493c810feb2a02f2e3ae5590f57e
+  size: 1694
+  hash: md5
+  path: bank_preprocessing.pkl

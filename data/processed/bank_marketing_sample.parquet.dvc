@@ -1,0 +1,5 @@
+outs:
+- md5: 5c4262522c1b906287a470acde4df2d4
+  size: 295906
+  hash: md5
+  path: bank_marketing_sample.parquet

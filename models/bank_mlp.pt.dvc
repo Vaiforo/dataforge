@@ -1,0 +1,5 @@
+outs:
+- md5: b5c775ef0afe22055f2f5f7f9b63cfed
+  size: 16069
+  hash: md5
+  path: bank_mlp.pt
